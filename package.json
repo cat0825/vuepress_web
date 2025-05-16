@@ -3,7 +3,7 @@
   "type": "module",
   "version": "1.0.0",
   "description": "",
-  "packageManager": "pnpm@10.10.0",
+  "packageManager": "pnpm@8.15.4",
   "pnpm": {
     "onlyBuiltDependencies": [
       "@parcel/watcher",
@@ -13,7 +13,8 @@
   "author": "cat0825 <1759138827@qq.com>",
   "license": "MIT",
   "engines": {
-    "node": ">=18.0.0"
+    "node": "18.x",
+    "pnpm": "8.x"
   },
   "scripts": {
     "docs:dev": "vuepress dev docs",

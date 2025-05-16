@@ -13,23 +13,23 @@ config:
       - title: 大语言模型学习
         icon: mdi:book-open-page-variant
         details: 大语言模型相关理论与实践笔记
-        link: /大语言模型学习/导航/
+        link: /大语言模型学习/导航.md
       - title: C++ Primer Plus
         icon: mdi:language-cpp
         details: C++ 基础与进阶学习笔记
-        link: /cpp-primer-plus/导航/
+        link: /cpp-primer-plus/导航.md
       - title: LeetCode
         icon: mdi:code-tags
         details: 算法与刷题笔记
-        link: /notes_bak/leetcode/导航/
+        link: /leetcode/导航.md
       - title: 机器学习
         icon: mdi:robot
         details: 机器学习理论与实战
-        link: /notes_bak/机器学习/导航/
+        link: /机器学习/导航.md
       - title: 毕业设计
         icon: mdi:school
         details: 毕业设计相关资料与进展
-        link: /notes_bak/毕业设计/导航/
+        link: /毕业设计/导航.md
   - type: blog
 ---
 

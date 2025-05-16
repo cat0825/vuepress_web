@@ -1,6 +1,6 @@
 {
-  "framework": null,
-  "buildCommand": "pnpm run docs:build",
+  "framework": "vuepress",
+  "buildCommand": "pnpm docs:build",
   "installCommand": "pnpm install",
   "outputDirectory": "docs/.vuepress/dist"
 }

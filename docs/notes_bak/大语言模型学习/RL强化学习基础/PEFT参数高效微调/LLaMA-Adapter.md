@@ -67,7 +67,7 @@ LLaMA-Adapter是对传统Adapter和Prefix Tuning方法的改进。其主要创�
 
 ❗ 使用门控机制进一步稳定微调过程。
 
-![Pasted image 20250424110142.png](/img/user/%E9%99%84%E4%BB%B6/Pasted%20image%2020250424110142.png)
+![Pasted-image-20250424110142.png](/img/user/%E9%99%84%E4%BB%B6/Pasted%20image%2020250424110142.png)
 
 
 ## 常见错误

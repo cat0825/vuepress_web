@@ -67,8 +67,8 @@ createTime: 2025/05/13 17:33:52
 3. **灵活性与可解码性**  
    - 压缩效果和词汇表大小可灵活调整，满足不同场景需求。
    - 编码后的数据可以无损解码回原始数据。
-   ![Pasted image 20250327100813.png](/img/user/%E9%99%84%E4%BB%B6/Pasted%20image%2020250327100813.png)
-   ![Pasted image 20250327100754.png](/img/user/%E9%99%84%E4%BB%B6/Pasted%20image%2020250327100754.png)
+   ![Pasted-image-20250327100813.png](/img/user/%E9%99%84%E4%BB%B6/Pasted%20image%2020250327100813.png)
+   ![Pasted-image-20250327100754.png](/img/user/%E9%99%84%E4%BB%B6/Pasted%20image%2020250327100754.png)
 
 ---
 

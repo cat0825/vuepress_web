@@ -41,7 +41,7 @@ createTime: 2025/05/13 17:33:52
 
 ## 内容概述
 P-Tuning是一种通过优化embedding层来增强GPT在自然语言理解任务中的方法。该方法通过将prompt转换为可学习的embedding层，并利用MLP和LSTM对其进行处理，从而使GPT更好地应用于NLU任务。
-![Pasted image 20250423224821.png](/img/user/%E9%99%84%E4%BB%B6/Pasted%20image%2020250423224821.png)
+![Pasted-image-20250423224821.png](/img/user/%E9%99%84%E4%BB%B6/Pasted%20image%2020250423224821.png)
 
 
 ## 主要观点
@@ -81,7 +81,7 @@ P-Tuning是一种通过优化embedding层来增强GPT在自然语言理解任务
 | 上下文词选择   | 选择具有代表性语义的词进行初始化 |
 | 重参数化       | 训练时使用，推理阶段不使用       |
 
-![Pasted image 20250423224844.png](/img/user/%E9%99%84%E4%BB%B6/Pasted%20image%2020250423224844.png)
+![Pasted-image-20250423224844.png](/img/user/%E9%99%84%E4%BB%B6/Pasted%20image%2020250423224844.png)
 
 
 ## 公式显示

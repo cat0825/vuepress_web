@@ -168,5 +168,150 @@ export default defineUserConfig({
      * @see https://theme-plume.vuejs.press/guide/features/encryption/
      */
     // encrypt: {},
+
+    sidebar: {
+      '/notes/': [
+        {
+          text: '笔记',
+          children: [
+            '/notes/README.md',
+          ],
+        },
+      ],
+      '/notes_bak/': [
+        {
+          text: '大语言模型学习',
+          children: [
+            '/notes_bak/大语言模型学习/导航.md',
+            {
+              text: '后训练',
+              link: '/notes_bak/大语言模型学习/后训练/'
+            },
+            {
+              text: 'Common Models常见模型',
+              link: '/notes_bak/大语言模型学习/Common-Models常见模型/'
+            },
+            {
+              text: 'Positional Encoding位置编码',
+              link: '/notes_bak/大语言模型学习/Positional-Encoding位置编码/'
+            },
+            {
+              text: 'Pre-training 预训练',
+              link: '/notes_bak/大语言模型学习/Pre-training-预训练/'
+            },
+            {
+              text: 'RL强化学习基础',
+              link: '/notes_bak/大语言模型学习/RL强化学习基础/'
+            },
+            {
+              text: '大模型应用',
+              link: '/notes_bak/大语言模型学习/大模型应用/'
+            },
+            {
+              text: '训练推理优化',
+              link: '/notes_bak/大语言模型学习/训练推理优化/'
+            },
+            {
+              text: 'Attention注意力机制',
+              link: '/notes_bak/大语言模型学习/Attention注意力机制/'
+            },
+            {
+              text: 'FFN、Add & LN 的作用与应用',
+              link: '/notes_bak/大语言模型学习/FFN-Add-LN-的作用与应用/'
+            },
+            {
+              text: 'MCP',
+              link: '/notes_bak/大语言模型学习/MCP/'
+            },
+            {
+              text: 'Structure & Decoding Policy 结构和解码策略',
+              link: '/notes_bak/大语言模型学习/Structure-Decoding-Policy-结构和解码策略/'
+            },
+            {
+              text: '分词',
+              link: '/notes_bak/大语言模型学习/分词/'
+            },
+            {
+              text: '模型压缩',
+              link: '/notes_bak/大语言模型学习/模型压缩/'
+            },
+            {
+              text: '词嵌入',
+              link: '/notes_bak/大语言模型学习/词嵌入/'
+            },
+          ],
+        },
+        {
+          text: 'LeetCode',
+          children: [
+            {
+              text: '滑动窗口',
+              link: '/notes_bak/leetcode/滑动窗口/'
+            },
+            {
+              text: '链表',
+              link: '/notes_bak/leetcode/链表/'
+            },
+          ],
+        },
+      ],
+      '/notes_bak/c++ primer plus/': [
+        {
+          text: 'c++ primer plus',
+          children: [
+            '/notes_bak/c++ primer plus/using和namespace.md',
+            '/notes_bak/c++ primer plus/关于过程编程,面向对象编程和泛型编程.md',
+            '/notes_bak/c++ primer plus/函数声明.md',
+            '/notes_bak/c++ primer plus/初始化.md',
+            '/notes_bak/c++ primer plus/局部和全局的命名空间引入.md',
+          ],
+        },
+      ],
+      '/notes_bak/thino/': [
+        {
+          text: 'thino',
+          children: [
+            '/notes_bak/thino/2024-12-25.md',
+          ],
+        },
+      ],
+      '/notes_bak/transformer/': [
+        {
+          text: 'transformer',
+          children: [
+            '/notes_bak/transformer/什么是transformer.md',
+          ],
+        },
+      ],
+      '/notes_bak/机器学习/': [
+        {
+          text: '机器学习',
+          children: [
+            '/notes_bak/机器学习/关于单变量线性回归的思考.md',
+            '/notes_bak/机器学习/关于逻辑回归中的代价函数.md',
+            '/notes_bak/机器学习/关于逻辑回归的思考.md',
+            '/notes_bak/机器学习/引言.md',
+          ],
+        },
+      ],
+      '/notes_bak/毕业设计/': [
+        {
+          text: '毕业设计',
+          children: [
+            '/notes_bak/毕业设计/学习资料.md',
+          ],
+        },
+      ],
+      '/notes_bak/demo/': [
+        {
+          text: 'demo',
+          children: [
+            '/notes_bak/demo/README.md',
+            '/notes_bak/demo/foo.md',
+            '/notes_bak/demo/bar.md',
+          ],
+        },
+      ],
+    },
   }),
 })

@@ -49,8 +49,8 @@ createTime: 2025/05/13 17:33:52
 ## 内容概要
 深度偏好优化（DPO）是一种旨在使模型输出与人类偏好对齐的技术。其核心思想是通过对比学习的方式，优化模型在选择与拒绝回答的概率差异。本文将详细解析DPO损失函数的原理，并提供相关代码示例。
 
-![Pasted image 20250422224044.png](/img/user/%E9%99%84%E4%BB%B6/Pasted%20image%2020250422224044.png)
-![Pasted image 20250422224104.png](/img/user/%E9%99%84%E4%BB%B6/Pasted%20image%2020250422224104.png)![Pasted image 20250422224109.png](/img/user/%E9%99%84%E4%BB%B6/Pasted%20image%2020250422224109.png)
+![Pasted-image-20250422224044.png](/img/user/%E9%99%84%E4%BB%B6/Pasted%20image%2020250422224044.png)
+![Pasted-image-20250422224104.png](/img/user/%E9%99%84%E4%BB%B6/Pasted%20image%2020250422224104.png)![Pasted-image-20250422224109.png](/img/user/%E9%99%84%E4%BB%B6/Pasted%20image%2020250422224109.png)
 
 
 

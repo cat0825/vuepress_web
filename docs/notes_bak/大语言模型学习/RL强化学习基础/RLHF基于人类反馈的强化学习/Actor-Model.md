@@ -44,7 +44,7 @@ createTime: 2025/05/13 17:33:52
 
 ### 核心观点
 PPO算法通过计算策略的损失函数来更新Actor模型。具体来说，输入一条prompt（批大小为1），输出其对应的response，然后将prompt与response结合计算损失，用于更新Actor。PPO算法中的损失计算涉及到优势函数（Advantage Function），并在每个输出token处计算损失。
-![Pasted image 20250416103547.png](/img/user/%E9%99%84%E4%BB%B6/Pasted%20image%2020250416103547.png)
+![Pasted-image-20250416103547.png](/img/user/%E9%99%84%E4%BB%B6/Pasted%20image%2020250416103547.png)
 
 
 ### 重点段落

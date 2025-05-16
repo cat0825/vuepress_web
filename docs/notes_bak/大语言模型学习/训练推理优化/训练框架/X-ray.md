@@ -64,8 +64,8 @@ createTime: 2025/05/13 17:33:53
 
 ### ZeRO （Zero Redundancy Optimizer），
 思想上类似 Parameter Server 架构，GPU 间互为参数服务器，参数服务器根据不同模式存储着优化器参数、梯度、模型参数。ZeRO 本质上是数据并行，即一张卡上会发生一次完整的前向和反向。
-![Pasted image 20250430221131.png](/img/user/%E9%99%84%E4%BB%B6/Pasted%20image%2020250430221131.png)
-![Pasted image 20250430221143.png](/img/user/%E9%99%84%E4%BB%B6/Pasted%20image%2020250430221143.png)
+![Pasted-image-20250430221131.png](/img/user/附件/Pasted-image-20250430221131.png)
+![Pasted-image-20250430221143.png](/img/user/附件/Pasted-image-20250430221143.png)
 
 
 
@@ -83,10 +83,10 @@ Deepspeed 是另一个广泛使用的深度学习框架，其最大的优势在�
 ## Ray
 Ray 是一个高性能分布式执行框架，为解决世界上最复杂和要求苛刻的计算问题提供了强大的支持。正如 OpenAI 的 CTO 和联合创始人 Greg Brockman 所说：
 
-> “在 OpenAI，我们正在解决世界上一些最复杂和要求苛刻的计算问题。Ray 为我们提供了解决这些棘手问题的动力，并使我们能够比以往更快地进行大规模迭代。”
+> "在 OpenAI，我们正在解决世界上一些最复杂和要求苛刻的计算问题。Ray 为我们提供了解决这些棘手问题的动力，并使我们能够比以往更快地进行大规模迭代。"
 
 Ray 提供了简单但通用的分布式编程抽象，处于较低的抽象层次，可以在其上构建各种分布式计算系统。Ray 的编程前端包括 Python、Java 和 C++（实验性），其去中心化的构建思想体现在分布式共享内存 object store、分布式引用计数和分布式调度。
-![Pasted image 20250430222252.png](/img/user/%E9%99%84%E4%BB%B6/Pasted%20image%2020250430222252.png)
+![Pasted-image-20250430222252.png](/img/user/附件/Pasted-image-20250430222252.png)
 在 Ray 的编程抽象中，Actor 实现为一个 Python Class，代表的是一个 Long Running Python Process。我们可以通过调用 Class 的方法向 Ray Actor 发送请求。
 
 ### 代码示例
@@ -130,4 +130,4 @@ print(results)
 `Workhorse`，是一个 `Ray Actor`，其持有一张 `GPU` 卡，是模型的一个分片。
 
 `WholeModel`，是一个 `Ray Actor`，它代表了一个模型整体，是一个代理，而模型本身可能被 `shard` / `replicate` 到多机多卡上，它持有着多个 `Workhorse`。
-![Pasted image 20250430222338.png](/img/user/%E9%99%84%E4%BB%B6/Pasted%20image%2020250430222338.png)
+![Pasted-image-20250430222338.png](/img/user/附件/Pasted-image-20250430222338.png)

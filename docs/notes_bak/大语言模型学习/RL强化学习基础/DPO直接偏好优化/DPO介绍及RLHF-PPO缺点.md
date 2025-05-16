@@ -41,7 +41,7 @@ createTime: 2025/05/13 17:33:52
 
 ## 内容概述
 直接偏好优化（Direct Preference Optimization, DPO）是一种新的方法，旨在克服传统RLHF-PPO（通过人类反馈的强化学习-近端策略优化）中的一些缺点。本文讨论了DPO的潜在优势，并指出了现有方法中存在的挑战。
-![Pasted image 20250422223240.png](/img/user/%E9%99%84%E4%BB%B6/Pasted%20image%2020250422223240.png)
+![Pasted-image-20250422223240.png](/img/user/%E9%99%84%E4%BB%B6/Pasted%20image%2020250422223240.png)
 
 
 ## 核心观点

@@ -40,7 +40,7 @@ createTime: 2025/05/13 17:33:52
 
 ## 核心观点
 VeRA（Vector-based Random Matrix Adaptation）是一种创新方法，旨在通过引入共享的随机权值矩阵，显著减少LoRA（Low-Rank Adaptation）参数的大小。与传统方法不同，VeRA不直接训练矩阵A和B，而是用共享的随机权值初始化这些矩阵，并仅在微调时训练两个向量d和b。
-![Pasted image 20250424111725.png](/img/user/%E9%99%84%E4%BB%B6/Pasted%20image%2020250424111725.png)
+![Pasted-image-20250424111725.png](/img/user/%E9%99%84%E4%BB%B6/Pasted%20image%2020250424111725.png)
 
 
 ## 重点段落

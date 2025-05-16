@@ -41,20 +41,20 @@ createTime: 2025/05/13 17:33:52
 
 ## 核心观点总结
 Prefix Tuning是一种通过在输入token前构造任务相关的连续virtual tokens作为Prefix的方法。它在训练过程中只更新Prefix部分的参数，而保持LLM其他部分参数不变。此方法对于不同模型结构需要构造不同的Prefix，并在每层都加上prompt的参数以提高性能。
-![Pasted image 20250423225341.png](/img/user/%E9%99%84%E4%BB%B6/Pasted%20image%2020250423225341.png)
+![Pasted-image-20250423225341.png](/img/user/%E9%99%84%E4%BB%B6/Pasted%20image%2020250423225341.png)
 
 
 ## 重点段落
 
 ### Prefix Tuning的实现
 Prefix Tuning通过在输入token前构造任务相关的连续virtual tokens作为Prefix。这些virtual tokens不对应于真实tokens，而是自由参数。在训练过程中，仅更新这些Prefix的参数，保持LLM其他部分参数固定。
-![Pasted image 20250423225444.png](/img/user/%E9%99%84%E4%BB%B6/Pasted%20image%2020250423225444.png)
+![Pasted-image-20250423225444.png](/img/user/%E9%99%84%E4%BB%B6/Pasted%20image%2020250423225444.png)
 
 
 ### 应用于不同模型结构
 1. **自回归架构模型**: 在句子前面添加前缀，形成 z = [PREFIX; x; y]。合适的上文能够在固定LM的情况下引导生成下文。
 2. **编码器-解码器架构模型**: Encoder和Decoder都增加了前缀，形成 z = [PREFIX; x; PREFIX0; y]。Encoder端增加前缀是为了引导输入部分的编码，Decoder端增加前缀是为了引导后续token的生成。
-![Pasted image 20250423225409.png](/img/user/%E9%99%84%E4%BB%B6/Pasted%20image%2020250423225409.png)
+![Pasted-image-20250423225409.png](/img/user/%E9%99%84%E4%BB%B6/Pasted%20image%2020250423225409.png)
 
 
 ### 防止训练不稳定

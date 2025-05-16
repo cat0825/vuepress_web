@@ -36,7 +36,7 @@ vLLM是一个开源的大模型推理加速框架，通过PagedAttention高效�
 
 ### Prefill
 预填充阶段。在这个阶段中，我们把整段prompt喂给模型做forward计算。如果采用KV cache技术，在这个阶段中我们会把prompt过 $W_k, W_v$ 后得到的 $X_k, X_v$ 保存在cache_k和cache_v中。这样在对后面的token计算attention时，我们就不需要对前面的token重复计算 $X_k, X_v$ 了，可以帮助我们节省推理时间。
-![Pasted image 20250430223027.png](/img/user/%E9%99%84%E4%BB%B6/Pasted%20image%2020250430223027.png)
+![Pasted-image-20250430223027.png](/img/user/附件/Pasted-image-20250430223027.png)
 
 
 ### Decode
@@ -44,5 +44,5 @@ vLLM是一个开源的大模型推理加速框架，通过PagedAttention高效�
 
 
 ### 常规KV cache分配
-痛点：由于推理所生成的序列长度大小是无法事先预知的，所以大部分框架会按照 (batch_size, max_seq_len) 这样的固定尺寸，在gpu显存上预先为一条请求开辟一块连续的矩形存储空间。然而，这样的分配方法很容易引起“gpu显存利用不足”的问题，进而影响模型推理时的吞吐量。
-![Pasted image 20250430223040.png](/img/user/%E9%99%84%E4%BB%B6/Pasted%20image%2020250430223040.png)
+痛点：由于推理所生成的序列长度大小是无法事先预知的，所以大部分框架会按照 (batch_size, max_seq_len) 这样的固定尺寸，在gpu显存上预先为一条请求开辟一块连续的矩形存储空间。然而，这样的分配方法很容易引起"gpu显存利用不足"的问题，进而影响模型推理时的吞吐量。
+![Pasted-image-20250430223040.png](/img/user/附件/Pasted-image-20250430223040.png)

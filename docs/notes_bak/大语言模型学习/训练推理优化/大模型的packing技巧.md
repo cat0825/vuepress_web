@@ -101,4 +101,4 @@ $$
 $$
 [bs, num\_heads, seq\_len, seq\_len]
 $$
-![Pasted image 20250430225058.png](/img/user/%E9%99%84%E4%BB%B6/Pasted%20image%2020250430225058.png)
+![Pasted-image-20250430225058.png](/img/user/附件/Pasted-image-20250430225058.png)

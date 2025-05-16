@@ -103,7 +103,7 @@ GAE用于估计逐个token的奖励。通常情况下，我们设置 $\lambda=1$
 ## 内容概述
 在现代自然语言处理任务中，PPO（Proximal Policy Optimization）作为一种强化学习算法，常用于优化策略以对齐人类偏好。然而，PPO在优化过程中可能引发所谓的“对齐税”，即尽管对齐人类偏好，但可能导致模型在某些NLP基准上的性能下降。为解决这一问题，InstructGPT提出了PPO-ptx方法，通过增加预训练损失（ptx loss）来避免策略遗忘预训练阶段学习到的知识。
 
-![Pasted image 20250416212538.png](/img/user/%E9%99%84%E4%BB%B6/Pasted%20image%2020250416212538.png)
+![Pasted-image-20250416212538.png](/img/user/%E9%99%84%E4%BB%B6/Pasted%20image%2020250416212538.png)
 
 
 ## 核心观点
@@ -121,7 +121,7 @@ PPO-ptx在原有的PPO优化目标基础上增加了预训练数据集上的优�
 ### KL Reward系数设置
 KL Reward中的系数 $\beta$ 非常重要，可以避免策略走得过远，导致过拟合和坍塌。通常需要通过实验确定模型表现较好的KL变化，然后根据目标KL来决定$\beta$的大小。
 
-![Pasted image 20250416212547.png](/img/user/%E9%99%84%E4%BB%B6/Pasted%20image%2020250416212547.png)
+![Pasted-image-20250416212547.png](/img/user/%E9%99%84%E4%BB%B6/Pasted%20image%2020250416212547.png)
 
 
 ### 预训练损失PTX Loss

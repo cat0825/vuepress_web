@@ -63,7 +63,7 @@ createTime: 2025/05/13 17:33:52
   - 梯度消失问题：当输入值较大或较小时，梯度接近于 $0$，导致训练效率低下。
   - 输出非零中心：权重更新可能偏向特定方向。
   - 指数运算耗费计算资源。
-![Pasted-image-20250407113132.png](/img/user/%E9%99%84%E4%BB%B6/Pasted-image-20250407113132.png)
+![Pasted-image-20250407113132.png](../../.vuepress/public/img/user/%E9%99%84%E4%BB%B6/Pasted-image-20250407113132.png)
 ---
 
 
@@ -77,7 +77,7 @@ createTime: 2025/05/13 17:33:52
 - **缺点**：
   - 梯度饱和问题仍然存在。
   - 同样需要指数运算，计算资源消耗较大。
-![Pasted-image-20250407113141.png](/img/user/%E9%99%84%E4%BB%B6/Pasted%20image%2020250407113141.png)
+![Pasted-image-20250407113141.png](../../.vuepress/public/img/user/%E9%99%84%E4%BB%B6/Pasted%20image%2020250407113141.png)
 ---
 
 
@@ -91,7 +91,7 @@ createTime: 2025/05/13 17:33:52
   - 计算简单，不需要指数运算。
 - **缺点**：
   - Dead ReLU 问题：当输入为负时，梯度为 $0$，导致神经元"死亡"，无法更新参数。
-![Pasted-image-20250407113149.png](/img/user/%E9%99%84%E4%BB%B6/Pasted-image-20250407113149.png)
+![Pasted-image-20250407113149.png](../../.vuepress/public/img/user/%E9%99%84%E4%BB%B6/Pasted-image-20250407113149.png)
 ---
 
 
@@ -105,7 +105,7 @@ createTime: 2025/05/13 17:33:52
 - **缺点**：
   - 参数 $\alpha$ 需要人工设置。
   - 在复杂分类任务中表现可能不够优秀。
-![Pasted-image-20250407113156.png](/img/user/%E9%99%84%E4%BB%B6/Pasted%20image%2020250407113156.png)
+![Pasted-image-20250407113156.png](../../.vuepress/public/img/user/%E9%99%84%E4%BB%B6/Pasted%20image%2020250407113156.png)
 ---
 
 
@@ -123,7 +123,7 @@ createTime: 2025/05/13 17:33:52
   - 对较小输入饱和至负值，有助于减少前向传播的变异。
 - **缺点**：
   - 指数运算导致计算效率较低。
-![Pasted-image-20250407113203.png](/img/user/%E9%99%84%E4%BB%B6/Pasted%20image%2020250407113203.png)
+![Pasted-image-20250407113203.png](../../.vuepress/public/img/user/%E9%99%84%E4%BB%B6/Pasted%20image%2020250407113203.png)
 ---
 
 
@@ -141,10 +141,10 @@ createTime: 2025/05/13 17:33:52
 
 
 
-![Pasted-image-20250407113210.png](/img/user/%E9%99%84%E4%BB%B6/Pasted%20image%2020250407113210.png)
+![Pasted-image-20250407113210.png](../../.vuepress/public/img/user/%E9%99%84%E4%BB%B6/Pasted%20image%2020250407113210.png)
 
 ---
-![Pasted-image-20250407113425.png](/img/user/%E9%99%84%E4%BB%B6/Pasted%20image%2020250407113425.png)
+![Pasted-image-20250407113425.png](../../.vuepress/public/img/user/%E9%99%84%E4%BB%B6/Pasted%20image%2020250407113425.png)
 
 
 

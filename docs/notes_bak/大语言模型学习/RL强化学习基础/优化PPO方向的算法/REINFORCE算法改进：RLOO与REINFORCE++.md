@@ -90,4 +90,4 @@ REINFORCE++是一种简单且高效的方法，用于对齐大型语言模型。
 ## 来源
 > 本文内容来源于论文《Back to Basics: Revisiting REINFORCE Style Optimization for Learning from Human Feedback in LLMs》和《REINFORCE++: A SIMPLE AND EFFICIENT APPROACH FOR ALIGNING LARGE LANGUAGE MODELS》。
 > [[大语言模型学习/RL强化学习基础/优化PPO方向的算法/ReMax\|ReMax]]
-> ![Pasted-image-20250422221155.png](/img/user/%E9%99%84%E4%BB%B6/Pasted%20image%2020250422221155.png)
+> ![Pasted-image-20250422221155.png](../../.vuepress/public/img/user/%E9%99%84%E4%BB%B6/Pasted%20image%2020250422221155.png)

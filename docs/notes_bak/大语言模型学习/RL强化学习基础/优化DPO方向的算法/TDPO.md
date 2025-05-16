@@ -40,7 +40,7 @@ createTime: 2025/05/13 17:33:52
 
 ## TDPO与PPO中的KL约束
 TDPO（Trust Region Policy Optimization）算法通过引入PPO（Proximal Policy Optimization）中的KL约束来优化策略。不同于PPO使用的backward KL，TDPO采用forward KL来计算KL惩罚。这种选择的原因在于KL距离的非对称性：forward KL旨在尽可能覆盖整个分布的大部分，而backward KL则专注于拟合分布中的某一部分。
-![Pasted-image-20250423224032.png](/img/user/%E9%99%84%E4%BB%B6/Pasted%20image%2020250423224032.png)
+![Pasted-image-20250423224032.png](../../.vuepress/public/img/user/%E9%99%84%E4%BB%B6/Pasted%20image%2020250423224032.png)
 
 
 ## TDPO的优势

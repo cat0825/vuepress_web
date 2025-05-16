@@ -43,7 +43,7 @@ P = softmax(S)
 $$
 
 
-![Pasted-image-20250428223029.png](/img/user/附件/Pasted-image-20250428223029.png)
+![Pasted-image-20250428223029.png](../../.vuepress/public/img/user/附件/Pasted-image-20250428223029.png)
 
 
 
@@ -63,4 +63,4 @@ softmax(x_i) = \frac{e^{x_i - m}}{\sum_{j=1}^{d} e^{x_j - m}}
 $$
 
 通过这样的处理，可以有效避免数值不稳定的问题，提高计算的精度和稳定性。在实际应用中，Safe softmax是一个非常重要的技巧，尤其是在深度学习模型中涉及到概率分布的计算时。
-![Pasted-image-20250428223037.png](/img/user/附件/Pasted-image-20250428223037.png)
+![Pasted-image-20250428223037.png](../../.vuepress/public/img/user/附件/Pasted-image-20250428223037.png)

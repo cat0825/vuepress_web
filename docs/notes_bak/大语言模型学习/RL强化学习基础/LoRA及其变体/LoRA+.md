@@ -44,7 +44,7 @@ LoRA+是一种针对LoRA适配器的优化方法，通过为矩阵A和B设置不
 
 
 ## 核心内容
-![Pasted-image-20250424111627.png](/img/user/%E9%99%84%E4%BB%B6/Pasted%20image%2020250424111627.png)
+![Pasted-image-20250424111627.png](../../.vuepress/public/img/user/%E9%99%84%E4%BB%B6/Pasted%20image%2020250424111627.png)
 
 ### LoRA+优化器创建
 LoRA+优化器通过设置不同的学习率来实现更高效的训练。具体步骤如下：

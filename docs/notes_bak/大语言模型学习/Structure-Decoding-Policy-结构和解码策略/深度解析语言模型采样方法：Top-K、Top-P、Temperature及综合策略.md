@@ -54,7 +54,7 @@ createTime: 2025/05/13 17:33:52
 Top-K Sampling 是一种从排名靠前的 k 个词中随机选择的方法。它允许高概率词语有更大的被选中机会，同时保留一定的随机性。这种方式可以提升生成质量，但也可能在以下两种情况下出现问题：
 1. **分布尖锐时**：可能导致生成内容不连贯或胡言乱语。
 2. **分布平坦时**：限制了模型的创造力。
-![Pasted-image-20250407180356.png](/img/user/%E9%99%84%E4%BB%B6/Pasted%20image%2020250407180356.png)
+![Pasted-image-20250407180356.png](../../.vuepress/public/img/user/%E9%99%84%E4%BB%B6/Pasted%20image%2020250407180356.png)
 ---
 
 
@@ -78,7 +78,7 @@ selected_idx = torch.multinomial(masked_probs, 1)
 return sorted_indices.gather(-1, selected_idx)
 ```
 
-![Pasted-image-20250407180404.png](/img/user/%E9%99%84%E4%BB%B6/Pasted%20image%2020250407180404.png)
+![Pasted-image-20250407180404.png](../../.vuepress/public/img/user/%E9%99%84%E4%BB%B6/Pasted%20image%2020250407180404.png)
 
 ---
 
@@ -110,7 +110,7 @@ KPT 是一种结合 Top-K、Top-P 和 Temperature 的综合方法，逐步进行
 
 ### Best-of-N
 让模型生成 N 个回答，通过评分机制（如 Verifier 或 PRM）选择得分最高的答案作为最终结果。
-![Pasted-image-20250407180419.png](/img/user/%E9%99%84%E4%BB%B6/Pasted%20image%2020250407180419.png)
+![Pasted-image-20250407180419.png](../../.vuepress/public/img/user/%E9%99%84%E4%BB%B6/Pasted%20image%2020250407180419.png)
 
 
 ### Majority Vote

@@ -40,7 +40,7 @@ createTime: 2025/05/13 17:33:52
 
 ## 核心观点总结
 在强化学习中，KL约束被用于防止策略偏离预训练模型太远。通过冻结SFT模型参数并在PPO训练中加入per-token的KL约束项，确保策略的稳定性。奖励机制通过调整公式，使得新的token-level reward能够更准确地反映策略的有效性。
-![Pasted-image-20250416211533.png](/img/user/%E9%99%84%E4%BB%B6/Pasted%20image%2020250416211533.png)
+![Pasted-image-20250416211533.png](../../.vuepress/public/img/user/%E9%99%84%E4%BB%B6/Pasted%20image%2020250416211533.png)
 
 
 ## 重点内容
@@ -69,7 +69,7 @@ $$
   $$
 
 其中$T$表示终止状态时间，即句子末尾的token。
-![Pasted-image-20250416211541.png](/img/user/%E9%99%84%E4%BB%B6/Pasted%20image%2020250416211541.png)
+![Pasted-image-20250416211541.png](../../.vuepress/public/img/user/%E9%99%84%E4%BB%B6/Pasted%20image%2020250416211541.png)
 
 
 ## 操作步骤

@@ -42,7 +42,7 @@ createTime: 2025/05/13 17:33:53
 ## 内容摘要
 GPT1模型通过生成性预训练来提升语言理解能力。其核心在于使用Transformer的decoder结构，结合自监督预训练和有监督微调，来提高模型的泛化性和加速训练收敛。
 
-![Pasted-image-20250424222516.png](/img/user/%E9%99%84%E4%BB%B6/Pasted%20image%2020250424222516.png)
+![Pasted-image-20250424222516.png](../../.vuepress/public/img/user/%E9%99%84%E4%BB%B6/Pasted%20image%2020250424222516.png)
 
 
 ## 模型结构

@@ -56,11 +56,11 @@ System Prompt Caching的基本思想是对System Prompt部分进行一次计算�
 
 ### 第一种形式：Prefix Sharing
 Prefix Sharing适用于“Prompt = System Prompt + User Prompt”这样的场景，其中System Prompt就是前缀（Prefix）。
-![Pasted-image-20250430224328.png](/img/user/%E9%99%84%E4%BB%B6/Pasted%20image%2020250430224328.png)
+![Pasted-image-20250430224328.png](../../.vuepress/public/img/user/%E9%99%84%E4%BB%B6/Pasted%20image%2020250430224328.png)
 
 
 ### 第二种形式：Prompt Cache
-![Pasted-image-20250430224338.png](/img/user/%E9%99%84%E4%BB%B6/Pasted%20image%2020250430224338.png)
+![Pasted-image-20250430224338.png](../../.vuepress/public/img/user/%E9%99%84%E4%BB%B6/Pasted%20image%2020250430224338.png)
 Prompt Cache属于相对高级的用法，是对整个输入Prompt对应的Key和Value值进行Caching操作，不局限于共享前缀。
 
 特别地，对于多轮对话场景，以及基于LLM的AI Agent应用场景，上述第二种方式，即Prompt Cache，可以支持Session Prompt Cache。在一个多轮对话session里，输入到LLM的Prompt会携带多轮对话历史，涉及到很多重复计算。通过Session Prompt Cache可以显著减少不必要的重复计算，节省GPU资源，提高对话响应速度和用户体验。

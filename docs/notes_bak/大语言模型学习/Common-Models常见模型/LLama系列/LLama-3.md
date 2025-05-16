@@ -45,7 +45,7 @@ createTime: 2025/05/13 17:33:53
 
 ## 内容概述
 Llama 3系列模型是Meta公司推出的最新人工智能模型，包含Llama3和Llama3.1。该系列模型在多语言处理、长文本处理和工具使用方面进行了显著的改进。本文将深入解析Llama 3的模型结构、训练数据及训练流程。
-![Pasted-image-20250424223641.png](/img/user/附件/Pasted-image-20250424223641.png)
+![Pasted-image-20250424223641.png](../../.vuepress/public/img/user/附件/Pasted-image-20250424223641.png)
 
 
 ## 模型结构

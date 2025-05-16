@@ -42,7 +42,7 @@ createTime: 2025/05/13 17:33:52
 ## 内容概述
 InstructGPT是OpenAI在语言模型后训练中应用RLHF（人类反馈的强化学习）技术的一个重要里程碑。通过结合PPO算法，InstructGPT使得模型能够更好地与人类意图对齐。核心流程包括SFT训练、偏好标签收集、Reward Model构建以及PPO算法优化。
 
-![Pasted-image-20250416103110.png](/img/user/%E9%99%84%E4%BB%B6/Pasted%20image%2020250416103110.png)
+![Pasted-image-20250416103110.png](../../.vuepress/public/img/user/%E9%99%84%E4%BB%B6/Pasted%20image%2020250416103110.png)
 
 
 ## 关键流程与技术

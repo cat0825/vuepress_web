@@ -41,14 +41,14 @@ createTime: 2025/05/13 17:33:53
 
 ## 核心观点总结
 Mixtral of Experts模型通过将大型模型分解为多个"专家"，在推理过程中只选择最相关的两个专家进行计算，从而提高推理效率并降低成本。该模型的创新在于使用门控机制动态选择专家组合，适用于处理大规模数据集或复杂任务。
-![Pasted-image-20250427222157.png](/img/user/附件/Pasted-image-20250427222157.png)
+![Pasted-image-20250427222157.png](../../.vuepress/public/img/user/附件/Pasted-image-20250427222157.png)
 
 
 ## 重点段落与数据
 
 ### 模型结构与工作原理
 Mixtral模型由8个小模型组成，训练时使用所有8个模型，但推理时仅使用其中两个。这种设计使得总参数量为46.7B，但每个token只需使用12.9B参数，降低了计算成本。专家组中的每个成员专注于处理输入数据的特定方面，例如语法或语义。
-![Pasted-image-20250427222213.png](/img/user/附件/Pasted-image-20250427222213.png)
+![Pasted-image-20250427222213.png](../../.vuepress/public/img/user/附件/Pasted-image-20250427222213.png)
 
 
 
@@ -73,12 +73,12 @@ MoE, 并行训练, 分布式系统, GPU
 ## 分布式初始化
 分布式初始化是将专家分布排列到多个GPU上的过程。我们先确定使用几块GPU来装载一套专家（EP），然后确认全局有多少套专家副本在运行（DP）。这种方法有助于优化资源使用并提高计算效率。
 
-![Pasted-image-20250427222354.png](/img/user/附件/Pasted-image-20250427222354.png)
+![Pasted-image-20250427222354.png](../../.vuepress/public/img/user/附件/Pasted-image-20250427222354.png)
 
 
 ## FWD与BWD过程
 在FWD过程中，数据首先通过non-MoE层，然后进入MoE层。每个GPU上的数据维度是(E, C, M)，通过ep_group内的all2all通讯将token发送到对应的专家。在BWD过程中，通过ep_dp_group中的allreduce来更新梯度结果。
-![Pasted-image-20250427222409.png](/img/user/附件/Pasted-image-20250427222409.png)
+![Pasted-image-20250427222409.png](../../.vuepress/public/img/user/附件/Pasted-image-20250427222409.png)
 
 ### 关键步骤
 1. ✅ 确定GPU数量用于装载专家（EP）。
@@ -175,12 +175,12 @@ $$
 ### 滑动窗口注意力机制
 滑动窗口注意力机制旨在减少KV缓存的存储压力。传统的因果解码形式需要每个token与之前所有的token进行注意力计算，导致缓存与序列长度正相关。通过限制每个token仅与其前W个token做注意力计算，可以将缓存容量维持在W。
 
-![Pasted-image-20250427222501.png](/img/user/附件/Pasted-image-20250427222501.png)
+![Pasted-image-20250427222501.png](../../.vuepress/public/img/user/附件/Pasted-image-20250427222501.png)
 
 
 ### Rolling Buffer Cache
 在Rolling Buffer Cache中，prompt中第i个token在KV缓存中的存储序号为 $i \% W$。这种方法帮助缓解缓存压力，并提高模型的推理效率。
-![Pasted-image-20250427222512.png](/img/user/附件/Pasted-image-20250427222512.png)
+![Pasted-image-20250427222512.png](../../.vuepress/public/img/user/附件/Pasted-image-20250427222512.png)
 
 
 ### Chunking方法

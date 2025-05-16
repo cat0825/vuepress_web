@@ -44,7 +44,7 @@ createTime: 2025/05/13 17:33:53
 
 ## 核心观点总结
 本文探讨了Deepseek-math项目的主要贡献，包括可扩展的数学预训练和对强化学习的探索与分析。重点介绍了数据处理过程，涉及训练数据的收集与清洗、预训练模型的参数设置、以及指令微调和强化学习过程。
-![Pasted-image-20250426221755.png](/img/user/附件/Pasted-image-20250426221755.png)
+![Pasted-image-20250426221755.png](../../.vuepress/public/img/user/附件/Pasted-image-20250426221755.png)
 
 
 ## 重点段落与数据

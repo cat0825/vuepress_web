@@ -22,7 +22,19 @@ def fix_image_links(directory):
                     
                     # 如果路径中包含空格，替换为连字符
                     if ' ' in img_path:
+                        # 处理路径中的空格
                         new_path = img_path.replace(' ', '-')
+                        # 处理文件名中的空格
+                        if '/' in new_path:
+                            dir_path, file_name = os.path.split(new_path)
+                            new_file_name = file_name.replace(' ', '-')
+                            new_path = os.path.join(dir_path, new_file_name)
+                        content = content.replace(img_path, new_path)
+                        modified = True
+                    
+                    # 处理绝对路径
+                    if img_path.startswith('/'):
+                        new_path = img_path.replace('/img/user/', '../../.vuepress/public/img/user/')
                         content = content.replace(img_path, new_path)
                         modified = True
                 

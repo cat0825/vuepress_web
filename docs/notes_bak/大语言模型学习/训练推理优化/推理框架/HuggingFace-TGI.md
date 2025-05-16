@@ -31,7 +31,7 @@ createTime: 2025/05/13 17:33:53
 
 
 
-## ![Pasted-image-20250430223133.png](/img/user/附件/Pasted-image-20250430223133.png)
+## ![Pasted-image-20250430223133.png](../../.vuepress/public/img/user/附件/Pasted-image-20250430223133.png)
 从图中可以看出，若干个客户端同时请求Web Server的"/generate"服务后，服务端会将这些请求在"Buffer"组件处整合为Batch，并通过gRPC协议转发请求给GPU推理引擎进行计算生成。至于将请求发给多个Model Shard，多个Model Shard之间通过NCCL通信，这是因为显存容量有限或出于计算效率考虑，需要多张GPU进行分布式推理。
 
 

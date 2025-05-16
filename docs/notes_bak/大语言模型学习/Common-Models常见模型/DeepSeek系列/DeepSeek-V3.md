@@ -53,7 +53,7 @@ createTime: 2025/05/13 17:33:53
   \text{SelectionScore}_i = \text{ExpertScore}_i + \alpha_i \cdot \beta
   $$
   通过可学习偏置项$\beta$自动调节专家负载
-![Pasted-image-20250426222200.png](/img/user/附件/Pasted-image-20250426222200.png)
+![Pasted-image-20250426222200.png](../../.vuepress/public/img/user/附件/Pasted-image-20250426222200.png)
 
 
 ### 通信优化机制
@@ -76,7 +76,7 @@ createTime: 2025/05/13 17:33:53
   \mathcal{L}_{\text{Total}} = \mathcal{L}_{\text{main}} + \frac{\lambda}{D} \sum_{k=1}^{D} \mathcal{L}_{\text{MTP}}^{k}
   $$
 
-![Pasted-image-20250426222216.png](/img/user/附件/Pasted-image-20250426222216.png)
+![Pasted-image-20250426222216.png](../../.vuepress/public/img/user/附件/Pasted-image-20250426222216.png)
 
 
 ## 性能对比

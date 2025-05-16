@@ -41,7 +41,7 @@ createTime: 2025/05/13 17:33:53
 
 ## 核心观点总结
 Qwen模型是一种基于Transformer改进的语言模型，采用了类似LLaMA的结构。通过一系列技术优化，Qwen在模型性能和外推能力上取得了显著提升。其关键特点包括未绑定的嵌入方式、RoPE位置编码和Flash Attention技术等。
-![Pasted-image-20250425111315.png](/img/user/附件/Pasted-image-20250425111315.png)
+![Pasted-image-20250425111315.png](../../.vuepress/public/img/user/附件/Pasted-image-20250425111315.png)
 
 
 ## 重点段落

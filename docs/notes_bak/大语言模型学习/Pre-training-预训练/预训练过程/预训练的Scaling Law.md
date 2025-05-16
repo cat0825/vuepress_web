@@ -70,14 +70,14 @@ $$
 
 ### 3. **Scaling Law实验结果**
 Llama3团队通过实验验证了Scaling Law：
-- 在不同预算下（$$6 \times 10^{18}$$到$$10^{22} FLOPs$$），调整模型大小（40M到16B参数）。![Pasted-image-20250409223919.png](/img/user/%E9%99%84%E4%BB%B6/Pasted%20image%2020250409223919.png)
+- 在不同预算下（$$6 \times 10^{18}$$到$$10^{22} FLOPs$$），调整模型大小（40M到16B参数）。![Pasted-image-20250409223919.png](../../.vuepress/public/img/user/%E9%99%84%E4%BB%B6/Pasted%20image%2020250409223919.png)
 - 使用幂律公式拟合最优点：
   $$
   N^*(C) = A \cdot C^\alpha
-  $$![Pasted-image-20250409223942.png](/img/user/%E9%99%84%E4%BB%B6/Pasted%20image%2020250409223942.png)
+  $$![Pasted-image-20250409223942.png](../../.vuepress/public/img/user/%E9%99%84%E4%BB%B6/Pasted%20image%2020250409223942.png)
   - $$C$$：预算（FLOPs）
   - $$N^*$$：最优Token数量
-  - $$A=0.299$$，$$\alpha=0.537$$![Pasted-image-20250409223958.png](/img/user/%E9%99%84%E4%BB%B6/Pasted%20image%2020250409223958.png)
+  - $$A=0.299$$，$$\alpha=0.537$$![Pasted-image-20250409223958.png](../../.vuepress/public/img/user/%E9%99%84%E4%BB%B6/Pasted%20image%2020250409223958.png)
 
 ⚠ **常见错误提醒**：
 1. 忽略了预算对Token数量和模型大小的限制。

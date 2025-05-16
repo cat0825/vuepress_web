@@ -41,8 +41,8 @@ createTime: 2025/05/13 17:33:53
 
 ## 内容概述
 PaLM 2 是谷歌推出的一种新型大语言模型，采用了 UL2 的思想，通过混合不同的预训练目标来增强模型对语言的理解，特别是在多语言能力方面表现突出。本文将探讨 PaLM 2 的一些关键技术点和优化策略。
-![Pasted-image-20250424124513.png](/img/user/%E9%99%84%E4%BB%B6/Pasted%20image%2020250424124513.png)
-![Pasted-image-20250424124526.png](/img/user/%E9%99%84%E4%BB%B6/Pasted%20image%2020250424124526.png)
+![Pasted-image-20250424124513.png](../../.vuepress/public/img/user/%E9%99%84%E4%BB%B6/Pasted%20image%2020250424124513.png)
+![Pasted-image-20250424124526.png](../../.vuepress/public/img/user/%E9%99%84%E4%BB%B6/Pasted%20image%2020250424124526.png)
 
 ### 模型结构与预训练
 PaLM 2 的技术报告中并未详细说明模型结构，但指出其采用了 UL2 的思想。UL2 是谷歌尝试的一种与 GPT-3、PaLM 不同的大语言模型路径，使用不同的预训练目标的混合方法。这种方法能够训练模型理解语言的不同方面，尤其是在多语言能力上表现出色。
@@ -50,16 +50,16 @@ PaLM 2 的技术报告中并未详细说明模型结构，但指出其采用了 
 
 ### Scaling Law 与优化
 PaLM 2 在模型训练中应用了 Scaling Law，通过对不同规模的模型和参数样本进行训练，并通过损失函数（loss）评估最佳结果。研究结果显示，损失函数与参数规模呈现等比关系。
-![Pasted-image-20250424124538.png](/img/user/%E9%99%84%E4%BB%B6/Pasted%20image%2020250424124538.png)
+![Pasted-image-20250424124538.png](../../.vuepress/public/img/user/%E9%99%84%E4%BB%B6/Pasted%20image%2020250424124538.png)
 
 #### FLOPs 计算成本
 在计算 FLOPs 成本时，选择最佳参数数量和训练令牌数量对结果影响显著。在损失最小（2.400）时，参数与令牌的关系被进一步阐述，这为模型的炼丹炉和炼丹材料的最适大小提供了指导。
-![Pasted-image-20250424124549.png](/img/user/%E9%99%84%E4%BB%B6/Pasted%20image%2020250424124549.png)
+![Pasted-image-20250424124549.png](../../.vuepress/public/img/user/%E9%99%84%E4%BB%B6/Pasted%20image%2020250424124549.png)
 
 
 ### Reasoning 能力优化
 PaLM 2 针对 LLM 在数学和科学工程问题上的痛点进行了专门调整，以优化在这些领域的性能。
-![Pasted-image-20250424124557.png](/img/user/%E9%99%84%E4%BB%B6/Pasted%20image%2020250424124557.png)![Pasted-image-20250424124617.png](/img/user/%E9%99%84%E4%BB%B6/Pasted%20image%2020250424124617.png)
+![Pasted-image-20250424124557.png](../../.vuepress/public/img/user/%E9%99%84%E4%BB%B6/Pasted%20image%2020250424124557.png)![Pasted-image-20250424124617.png](../../.vuepress/public/img/user/%E9%99%84%E4%BB%B6/Pasted%20image%2020250424124617.png)
 
 
 ## 常见错误

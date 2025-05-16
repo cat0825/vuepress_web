@@ -41,7 +41,7 @@ createTime: 2025/05/13 17:33:52
 ## 核心观点总结
 Critic模型用于预测期望总收益 $V_t$，通过TD-error进行更新。其核心在于对模型进行训练，以提升其对人类喜好的量化判断能力。Critic模型的存在意义在于帮助模型生成符合人类喜好的内容。
 
-![Pasted-image-20250416104730.png](/img/user/%E9%99%84%E4%BB%B6/Pasted%20image%2020250416104730.png)
+![Pasted-image-20250416104730.png](../../.vuepress/public/img/user/%E9%99%84%E4%BB%B6/Pasted%20image%2020250416104730.png)
 
 
 ## 重点段落

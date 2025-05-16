@@ -40,7 +40,7 @@ createTime: 2025/05/13 17:33:53
 单个请求:
 [动图演示](https://pic4.zhimg.com/v2-6035b0440dd9f0eb37bc9c221b977799_b.webp)
 多个请求：
-![Pasted-image-20250428225528.png](/img/user/附件/Pasted-image-20250428225528.png)
+![Pasted-image-20250428225528.png](../../.vuepress/public/img/user/附件/Pasted-image-20250428225528.png)
 所有序列在分块之后，只有最后一个块可能会浪费内存（实际中浪费的内存低于4%）。高效利用内存的好处很明显：系统可以在一个batch中同时输入更多的序列，提升GPU的利用率，显著地提升吞吐量。
 
 PagedAttention的另外一个好处是高效内存共享。例如，在并行采样的时候，一个prompt需要生成多个输出序列。这种情况下，对于这个prompt的计算和内存可以在输出序列之间共享。
@@ -51,15 +51,15 @@ PagedAttention的另外一个好处是高效内存共享。例如，在并行采
 
 ##  不同解码策略下的用法
 给模型发送一个请求，希望它对prompt做续写，并给出三种不同的回答。我们管这个场景叫parallel sampling。
-![Pasted-image-20250428225616.png](/img/user/附件/Pasted-image-20250428225616.png)
+![Pasted-image-20250428225616.png](../../.vuepress/public/img/user/附件/Pasted-image-20250428225616.png)
 
 ### prefill阶段
 vLLM拿到Sample A1和Sample A2，根据其中的文字内容，为其分配逻辑块和物理块。其中A1和A2的block0和block1是共享的。
-![Pasted-image-20250428225629.png](/img/user/附件/Pasted-image-20250428225629.png)![Pasted-image-20250428225637.png](/img/user/附件/Pasted-image-20250428225637.png)
+![Pasted-image-20250428225629.png](../../.vuepress/public/img/user/附件/Pasted-image-20250428225629.png)![Pasted-image-20250428225637.png](../../.vuepress/public/img/user/附件/Pasted-image-20250428225637.png)
 
 
 ### decode阶段
 当两个sample生成的token不一致时，触发copy-on-write，即在物理内存上新开辟一块空间。此时物理块block1只和A2的逻辑块block1映射，将其ref count减去1；物理块block3只和A1的逻辑块block1映射，将其ref count设为1。
 
 通过上述机制，PagedAttention实现了高效的内存管理和共享，大大提升了系统性能和资源利用率。这种创新性的内存管理方式为大规模模型推理提供了新的解决方案，值得进一步研究和应用。
-![Pasted-image-20250428225647.png](/img/user/附件/Pasted-image-20250428225647.png)
+![Pasted-image-20250428225647.png](../../.vuepress/public/img/user/附件/Pasted-image-20250428225647.png)

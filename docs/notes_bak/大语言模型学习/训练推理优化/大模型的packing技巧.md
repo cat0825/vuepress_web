@@ -101,4 +101,4 @@ $$
 $$
 [bs, num\_heads, seq\_len, seq\_len]
 $$
-![Pasted-image-20250430225058.png](/img/user/附件/Pasted-image-20250430225058.png)
+![Pasted-image-20250430225058.png](../../.vuepress/public/img/user/附件/Pasted-image-20250430225058.png)

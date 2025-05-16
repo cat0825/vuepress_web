@@ -48,7 +48,7 @@ GPT-3, Sparse Attention, Few-Shot Learning, AI模型, 机器学习
 ## 内容概述
 GPT-3采用了Sparse Attention技术，与GPT-2相比，显著提升了生成内容的真实性和处理更长输入序列的能力。GPT-3主推few-shot学习，并拥有更大的数据量和模型参数。其训练范式结合了预训练与in-context learning，与元学习相关联。
 
-![Pasted-image-20250424222815.png](../../.vuepress/public/img/user/附件/Pasted-image-20250424222815.png)
+![Pasted-image-20250424222815.png](/img/user/附件/Pasted-image-20250424222815.png)
 
 
 ## 模型结构与技术创新

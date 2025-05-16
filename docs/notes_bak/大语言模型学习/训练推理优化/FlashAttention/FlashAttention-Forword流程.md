@@ -33,7 +33,7 @@ createTime: 2025/05/13 17:33:53
 
 # FlashAttention Forward流程
 在这篇博客文章中，我们将深入探讨FlashAttention的前向流程，尤其是其独特的分块计算方法。FlashAttention通过引入额外的统计量，解决了注意力计算中Softmax分块计算的难题，并通过kernel融合优化了计算效率。
-![Pasted-image-20250428223229.png](../../.vuepress/public/img/user/附件/Pasted-image-20250428223229.png)
+![Pasted-image-20250428223229.png](/img/user/附件/Pasted-image-20250428223229.png)
 
 ## Tiling 分块计算
 SRAM的读写速度比HBM高一个数量级，但内存小很多。通过kernel融合的方式，将多个操作融合为一个操作，利用高速的SRAM进行计算，可以减少读写HBM的次数，从而有效减少内存受限操作的运行时间。但SRAM的内存大小有限，不可能一次性计算完整的注意力，因此必须进行分块计算，使得分块计算需要的内存不超过SRAM的大小。
@@ -96,7 +96,7 @@ Tiling分块计算使得可以用一个CUDA kernel来执行注意力的所有操
 
 同样，将 $\mathbf{V}$ 矩阵也切为 $T_c$ 块，每块长度为 $B_c$ 。用 $\mathbf{V}_j$ 表示切完后的某块矩阵，则 $\mathbf{V}_j$ 的维度为 $(B_c, d)$ 。易知 $\mathbf{V}_j$ 中存储着某 $B_c$ 个 token 的 value 信息。
 
-![Pasted-image-20250428224444.png](../../.vuepress/public/img/user/附件/Pasted-image-20250428224444.png)
+![Pasted-image-20250428224444.png](/img/user/附件/Pasted-image-20250428224444.png)
 
 ### 计算初始attention分数
 图中的 $S_{ij}$ 表示前 $B_r$ 个token和前 $B_c$ 个token间的原始相关性分数。
@@ -132,11 +132,11 @@ for 1 <= j <= Tc:
 
 
 ### 当 j=1 时
-![Pasted-image-20250428224511.png](../../.vuepress/public/img/user/附件/Pasted-image-20250428224511.png)
+![Pasted-image-20250428224511.png](/img/user/附件/Pasted-image-20250428224511.png)
 
 
 ### 当 j=2 时
-![Pasted-image-20250428224517.png](../../.vuepress/public/img/user/附件/Pasted-image-20250428224517.png)
+![Pasted-image-20250428224517.png](/img/user/附件/Pasted-image-20250428224517.png)
 
 
 ## Tilling 中的 Safe Softmax

@@ -179,7 +179,7 @@ RAG技术的发展可以划分为以下三个阶段：
 2. **Advanced RAG**：在Naive RAG的基础上，通过优化索引、检索和生成质量，克服了许多技术挑战。
 3. **Modular RAG**：在结构和功能上更加灵活，引入了更多模块化设计，支持复杂场景下的应用。
 
-![Pasted-image-20250506211943.png](../../.vuepress/public/img/user/%E9%99%84%E4%BB%B6/Pasted%20image%2020250506211943.png)
+![Pasted-image-20250506211943.png](/img/user/%E9%99%84%E4%BB%B6/Pasted%20image%2020250506211943.png)
 
 
 ### 相关综述论文

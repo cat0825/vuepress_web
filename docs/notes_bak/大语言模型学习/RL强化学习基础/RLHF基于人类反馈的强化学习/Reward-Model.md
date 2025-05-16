@@ -40,7 +40,7 @@ createTime: 2025/05/13 17:33:52
 
 ## 核心观点总结
 在强化学习中，奖励模型（Reward Model）用于评估生成的响应的质量。在PPO（Proximal Policy Optimization）训练过程中，奖励模型的参数是冻结的，仅用于提供奖励值。本文介绍了奖励模型的训练流程及其与传统强化学习的区别。
-![Pasted-image-20250416210854.png](../../.vuepress/public/img/user/%E9%99%84%E4%BB%B6/Pasted%20image%2020250416210854.png)
+![Pasted-image-20250416210854.png](/img/user/%E9%99%84%E4%BB%B6/Pasted%20image%2020250416210854.png)
 
 
 ## 奖励模型训练
@@ -76,7 +76,7 @@ class PairWiseLoss(nn.Module):
   \text{Reward\_loss} = - E_{(\sigma^+, \sigma^-, y) \in D} \left[ \log \left( \frac{\exp(\sum r(s_t^+, a_t^+))}{\exp(\sum r(s_t^+ , a_t^+)) + \exp(\sum r(s_t^-, a_t^-))} \right) \right]
   $$
 
-![Pasted-image-20250416210927.png](../../.vuepress/public/img/user/%E9%99%84%E4%BB%B6/Pasted%20image%2020250416210927.png)
+![Pasted-image-20250416210927.png](/img/user/%E9%99%84%E4%BB%B6/Pasted%20image%2020250416210927.png)
 
 
 ## 聚合操作

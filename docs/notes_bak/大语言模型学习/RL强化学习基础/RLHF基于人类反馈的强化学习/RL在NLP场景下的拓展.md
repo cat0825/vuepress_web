@@ -49,7 +49,7 @@ createTime: 2025/05/13 17:33:52
 - **状态（$s_t$）**：上文及当前时刻前生成的所有token序列，初始状态为prompt的token序列。
 - **状态转移**：通过当前状态和动作的token序列确定下一个状态。
 
-![Pasted-image-20250416102529.png](../../.vuepress/public/img/user/%E9%99%84%E4%BB%B6/Pasted%20image%2020250416102529.png)
+![Pasted-image-20250416102529.png](/img/user/%E9%99%84%E4%BB%B6/Pasted%20image%2020250416102529.png)
 
 
 ### 强化学习优化目标

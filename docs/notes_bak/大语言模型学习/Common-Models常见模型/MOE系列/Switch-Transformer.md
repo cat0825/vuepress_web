@@ -52,7 +52,7 @@ Switch Transformer是一种基于T5开发的encoder-decoder结构模型，拥有
 
 ## 模型结构设计
 Switch Transformer通过将transformer每层的FFN替换为MoE层，并简化gating为只选择一个expert（即k=1），形成Switch layer。
-![Pasted-image-20250427222619.png](../../.vuepress/public/img/user/附件/Pasted-image-20250427222619.png)
+![Pasted-image-20250427222619.png](/img/user/附件/Pasted-image-20250427222619.png)
 
 
 ## 负载均衡

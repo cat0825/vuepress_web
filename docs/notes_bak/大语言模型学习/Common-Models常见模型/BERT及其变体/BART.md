@@ -41,7 +41,7 @@ createTime: 2025/05/13 17:33:53
 
 ## 内容概述
 BART是一种基于Transformer架构的模型，结合了双向和自回归的特性。它在文本生成任务中表现优异，同时也能在文本理解任务中取得领先的效果。
-![Pasted-image-20250424113608.png](../../.vuepress/public/img/user/附件/Pasted-image-20250424113608.png)
+![Pasted-image-20250424113608.png](/img/user/附件/Pasted-image-20250424113608.png)
 
 ### 核心观点
 - **模型架构**：BART采用标准的encoder-decoder结构，并进行了若干调整。

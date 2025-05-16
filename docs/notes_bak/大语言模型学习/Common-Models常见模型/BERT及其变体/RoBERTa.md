@@ -102,6 +102,6 @@ RoBERTa的动态掩码策略使其能够更好地学习不同语言表征，这�
 
 以上内容基于最新研究和技术发展总结而来，旨在提供对RoBERTa优化方法的全面理解。
 
-![Pasted-image-20250424113530.png](../../.vuepress/public/img/user/附件/Pasted-image-20250424113530.png)
+![Pasted-image-20250424113530.png](/img/user/附件/Pasted-image-20250424113530.png)
 
-![Pasted-image-20250424113541.png](../../.vuepress/public/img/user/附件/Pasted-image-20250424113541.png)
+![Pasted-image-20250424113541.png](/img/user/附件/Pasted-image-20250424113541.png)

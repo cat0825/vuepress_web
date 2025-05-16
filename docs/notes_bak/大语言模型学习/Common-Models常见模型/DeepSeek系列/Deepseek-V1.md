@@ -49,7 +49,7 @@ Deepseek-V1基于LLaMA架构，采用了以下技术：
 - **SwiGLU**和**RoPE**：用于提升模型的非线性表达能力。
 - **GQA**：在67B参数模型中使用以降低推理成本。
 - **BBPE算法**：用于将文本分词，训练语料库约24GB，词汇表大小为102400。
-![Pasted-image-20250426221705.png](../../.vuepress/public/img/user/附件/Pasted-image-20250426221705.png)
+![Pasted-image-20250426221705.png](/img/user/附件/Pasted-image-20250426221705.png)
 
 
 ## 训练过程

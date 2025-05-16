@@ -43,7 +43,7 @@ createTime: 2025/05/13 17:33:52
 
 ## **核心内容概述**
 在现代大规模语言模型（如LLaMA2-7B）中，传统的前馈神经网络（FFN）结构正逐渐被更高效的变种所取代，例如SwiGLU和GeGLU。这些变种通过引入更复杂的激活函数（如Swish和GeLU），优化了计算效率和模型性能，并通过调整中间层维度来保持参数量的平衡。
-![Pasted-image-20250407112246.png](../../.vuepress/public/img/user/%E9%99%84%E4%BB%B6/Pasted%20image%2020250407112246.png)
+![Pasted-image-20250407112246.png](/img/user/%E9%99%84%E4%BB%B6/Pasted%20image%2020250407112246.png)
 
 ---
 

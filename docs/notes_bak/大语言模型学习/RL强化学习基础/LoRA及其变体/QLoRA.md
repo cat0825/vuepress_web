@@ -46,7 +46,7 @@ QLoRA是一种基于LoRA的微调方法，通过引入4-bit NormalFloat、双重
 ## 核心观点
 QLoRA通过在每个网络层添加适配器，避免了以前微调方法中几乎所有的准确性折衷。这种方法将拥有65B参数的模型内存需求从>780GB降低到<48GB。
 
-![Pasted-image-20250424111525.png](../../.vuepress/public/img/user/%E9%99%84%E4%BB%B6/Pasted%20image%2020250424111525.png)
+![Pasted-image-20250424111525.png](/img/user/%E9%99%84%E4%BB%B6/Pasted%20image%2020250424111525.png)
 
 
 ## 技术术语通俗解释

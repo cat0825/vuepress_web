@@ -47,7 +47,7 @@ PaLM, Transformer, 自然语言处理, 机器学习, 模型训练
 
 ## 内容概述
 本文介绍了PaLM（Pathways Language Model）的结构、训练设置和优化策略。PaLM采用了标准的Transformer架构，并进行了多项改进以提升模型性能和训练稳定性。
-![Pasted-image-20250424124216.png](../../.vuepress/public/img/user/%E9%99%84%E4%BB%B6/Pasted%20image%2020250424124216.png)![Pasted-image-20250424124234.png](../../.vuepress/public/img/user/%E9%99%84%E4%BB%B6/Pasted%20image%2020250424124234.png)
+![Pasted-image-20250424124216.png](/img/user/%E9%99%84%E4%BB%B6/Pasted%20image%2020250424124216.png)![Pasted-image-20250424124234.png](/img/user/%E9%99%84%E4%BB%B6/Pasted%20image%2020250424124234.png)
 
 
 ## 模型结构

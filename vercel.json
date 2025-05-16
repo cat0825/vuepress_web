@@ -1,7 +1,0 @@
-{
-  "framework": "vuepress",
-  "buildCommand": "pnpm docs:build",
-  "installCommand": "pnpm install --no-frozen-lockfile",
-  "outputDirectory": "docs/.vuepress/dist",
-  "nodeVersion": "18.x"
-}

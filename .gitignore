@@ -1,8 +1,25 @@
-**/node_modules
+# Node.js
+node_modules/
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+pnpm-debug.log*
 
-docs/.vuepress/.cache
-docs/.vuepress/.temp
-docs/.vuepress/dist
+# VuePress
+.vuepress/dist/
+.vuepress/.temp/
+.vuepress/cache/
 
+# IDE
+.idea/
+.vscode/
+*.suo
+*.ntvs*
+*.njsproj
+*.sln
+*.sw?
+
+# OS
 .DS_Store
+Thumbs.db
 *.log

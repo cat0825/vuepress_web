@@ -1,0 +1,88 @@
+<template><div><h2 id="最简单直观的文本分块方法" tabindex="-1"><a class="header-anchor" href="#最简单直观的文本分块方法"><span>最简单直观的文本分块方法</span></a></h2>
+<p>固定长度分块是一种最简单直观的文本分块方法。其核心思想是按照预先设定的固定长度，将文本划分为若干块。这种方法实现起来非常容易，但在实际应用中需要注意以下几个方面的问题和挑战。
+<img src="/img/user/附件/Pasted image 20250506215218.png" alt="Pasted image 20250506215218.png"></p>
+<hr>
+<h2 id="问题与挑战" tabindex="-1"><a class="header-anchor" href="#问题与挑战"><span>问题与挑战</span></a></h2>
+<h3 id="上下文割裂" tabindex="-1"><a class="header-anchor" href="#上下文割裂"><span>上下文割裂</span></a></h3>
+<p>简单按照固定字符数截断文本，可能会打断句子或段落，导致上下文信息丢失。这种情况下会直接影响后续的文本向量化效果和语义理解。</p>
+<h3 id="语义完整性受损" tabindex="-1"><a class="header-anchor" href="#语义完整性受损"><span>语义完整性受损</span></a></h3>
+<p>由于文本块可能包含不完整的句子或思想，这会影响检索阶段的匹配精度，同时也会降低大语言模型生成回答的质量。</p>
+<hr>
+<h2 id="改进方法" tabindex="-1"><a class="header-anchor" href="#改进方法"><span>改进方法</span></a></h2>
+<p>为了解决上述问题，可以采用以下改进方法：</p>
+<h3 id="_1-引入重叠" tabindex="-1"><a class="header-anchor" href="#_1-引入重叠"><span>1. 引入重叠</span></a></h3>
+<p>在相邻文本块之间引入一定的重叠部分，确保上下文的连贯性。例如，每个文本块与前一个块有 50 个字符的重叠。这种方式可以帮助保留句子的完整性和段落的连贯性。此外，在问答场景下，如果答案跨越块边界，重叠部分也可能帮助捕获完整答案。</p>
+<h3 id="_2-智能截断" tabindex="-1"><a class="header-anchor" href="#_2-智能截断"><span>2. 智能截断</span></a></h3>
+<p>在切分文本时，尽量选择在标点符号或段落结束处进行截断，而不是严格按照字符数进行切分。这样可以避免打断句子，从而保持语义的完整。</p>
+<hr>
+<h2 id="langchain-的优化方案" tabindex="-1"><a class="header-anchor" href="#langchain-的优化方案"><span>LangChain 的优化方案</span></a></h2>
+<h3 id="recursivecharactertextsplitter" tabindex="-1"><a class="header-anchor" href="#recursivecharactertextsplitter"><span>RecursiveCharacterTextSplitter</span></a></h3>
+<p>LangChain 提供了 <code v-pre>RecursiveCharacterTextSplitter</code>，优化了固定大小文本切块方法的缺陷，是一种推荐用于通用文本处理的工具。在实践中，<strong>固定长度 + 重叠</strong> 是一种常用且有效的策略。以下是具体建议：</p>
+<ul>
+<li>针对中文内容，可以设定每块大约包含 300-500 个字符，重叠 50-100 个字符。</li>
+<li>这种长度通常足够包含一个完整的细节或论点，同时又不会太长导致嵌入模型难以表示。</li>
+<li>开发者可以通过调整块大小和重叠长度，在<strong>召回粒度</strong>（过短的块容易需要多个块才能拼凑完整答案）和<strong>检索精准</strong>（过长的块可能包含无关信息）之间取得平衡。</li>
+</ul>
+<hr>
+<h2 id="使用示例" tabindex="-1"><a class="header-anchor" href="#使用示例"><span>使用示例</span></a></h2>
+<p>以下是一个使用 <code v-pre>RecursiveCharacterTextSplitter</code> 的代码示例：</p>
+<div class="language-python line-numbers-mode" data-highlighter="shiki" data-ext="python" style="--shiki-light:#393a34;--shiki-dark:#dbd7caee;--shiki-light-bg:#ffffff;--shiki-dark-bg:#121212"><pre class="shiki shiki-themes vitesse-light vitesse-dark vp-code" v-pre=""><code><span class="line"><span style="--shiki-light:#A0ADA0;--shiki-dark:#758575DD"># 定义切分参数</span></span>
+<span class="line"><span style="--shiki-light:#393A34;--shiki-dark:#DBD7CAEE">chunk_size </span><span style="--shiki-light:#999999;--shiki-dark:#666666">=</span><span style="--shiki-light:#2F798A;--shiki-dark:#4C9A91"> 200</span></span>
+<span class="line"><span style="--shiki-light:#393A34;--shiki-dark:#DBD7CAEE">chunk_overlap </span><span style="--shiki-light:#999999;--shiki-dark:#666666">=</span><span style="--shiki-light:#2F798A;--shiki-dark:#4C9A91"> 50</span></span>
+<span class="line"><span style="--shiki-light:#393A34;--shiki-dark:#DBD7CAEE">length_function </span><span style="--shiki-light:#999999;--shiki-dark:#666666">=</span><span style="--shiki-light:#998418;--shiki-dark:#B8A965"> len</span></span>
+<span class="line"><span style="--shiki-light:#393A34;--shiki-dark:#DBD7CAEE">separators </span><span style="--shiki-light:#999999;--shiki-dark:#666666">=</span><span style="--shiki-light:#999999;--shiki-dark:#666666"> [</span><span style="--shiki-light:#B5695977;--shiki-dark:#C98A7D77">"</span><span style="--shiki-light:#A65E2B;--shiki-dark:#C99076">\n</span><span style="--shiki-light:#B5695977;--shiki-dark:#C98A7D77">"</span><span style="--shiki-light:#999999;--shiki-dark:#666666">,</span><span style="--shiki-light:#B5695977;--shiki-dark:#C98A7D77"> "</span><span style="--shiki-light:#B56959;--shiki-dark:#C98A7D">。</span><span style="--shiki-light:#B5695977;--shiki-dark:#C98A7D77">"</span><span style="--shiki-light:#999999;--shiki-dark:#666666">,</span><span style="--shiki-light:#B5695977;--shiki-dark:#C98A7D77"> ""</span><span style="--shiki-light:#999999;--shiki-dark:#666666">]</span></span>
+<span class="line"></span>
+<span class="line"><span style="--shiki-light:#A0ADA0;--shiki-dark:#758575DD"># 待处理的文本</span></span>
+<span class="line"><span style="--shiki-light:#393A34;--shiki-dark:#DBD7CAEE">text </span><span style="--shiki-light:#999999;--shiki-dark:#666666">=</span><span style="--shiki-light:#B5695977;--shiki-dark:#C98A7D77"> "</span><span style="--shiki-light:#B56959;--shiki-dark:#C98A7D">...</span><span style="--shiki-light:#B5695977;--shiki-dark:#C98A7D77">"</span><span style="--shiki-light:#393A34;--shiki-dark:#DBD7CAEE"> </span></span>
+<span class="line"></span>
+<span class="line"><span style="--shiki-light:#A0ADA0;--shiki-dark:#758575DD"># 创建文本块</span></span>
+<span class="line"><span style="--shiki-light:#393A34;--shiki-dark:#DBD7CAEE">texts </span><span style="--shiki-light:#999999;--shiki-dark:#666666">=</span><span style="--shiki-light:#393A34;--shiki-dark:#DBD7CAEE"> text_splitter</span><span style="--shiki-light:#999999;--shiki-dark:#666666">.</span><span style="--shiki-light:#393A34;--shiki-dark:#DBD7CAEE">create_documents</span><span style="--shiki-light:#999999;--shiki-dark:#666666">([</span><span style="--shiki-light:#393A34;--shiki-dark:#DBD7CAEE">text</span><span style="--shiki-light:#999999;--shiki-dark:#666666">])</span></span>
+<span class="line"></span>
+<span class="line"><span style="--shiki-light:#A0ADA0;--shiki-dark:#758575DD"># 打印每个文本块</span></span>
+<span class="line"><span style="--shiki-light:#1E754F;--shiki-dark:#4D9375">for</span><span style="--shiki-light:#393A34;--shiki-dark:#DBD7CAEE"> doc </span><span style="--shiki-light:#1E754F;--shiki-dark:#4D9375">in</span><span style="--shiki-light:#393A34;--shiki-dark:#DBD7CAEE"> texts</span><span style="--shiki-light:#999999;--shiki-dark:#666666">:</span></span>
+<span class="line"><span style="--shiki-light:#998418;--shiki-dark:#B8A965">    print</span><span style="--shiki-light:#999999;--shiki-dark:#666666">(</span><span style="--shiki-light:#393A34;--shiki-dark:#DBD7CAEE">doc</span><span style="--shiki-light:#999999;--shiki-dark:#666666">)</span></span></code></pre>
+<div class="line-numbers" aria-hidden="true" style="counter-reset:line-number 0"><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div></div></div><hr>
+<h2 id="参数说明" tabindex="-1"><a class="header-anchor" href="#参数说明"><span>参数说明</span></a></h2>
+<h3 id="_1-chunk-size" tabindex="-1"><a class="header-anchor" href="#_1-chunk-size"><span>1. <code v-pre>chunk_size</code></span></a></h3>
+<p><code v-pre>chunk_size</code> 定义了文本块的最大长度。例如，设置为 200 时，每个文本块最多包含 200 个字符。</p>
+<h3 id="_2-chunk-overlap" tabindex="-1"><a class="header-anchor" href="#_2-chunk-overlap"><span>2. <code v-pre>chunk_overlap</code></span></a></h3>
+<p><code v-pre>chunk_overlap</code> 定义了相邻文本块之间的重叠长度。例如，设置为 50 时，相邻文本块将共享 50 个字符。</p>
+<h3 id="_3-length-function" tabindex="-1"><a class="header-anchor" href="#_3-length-function"><span>3. <code v-pre>length_function</code></span></a></h3>
+<p><code v-pre>length_function</code> 是一个用于计算文本长度的函数，默认值为 <code v-pre>len</code>。</p>
+<h3 id="_4-separators" tabindex="-1"><a class="header-anchor" href="#_4-separators"><span>4. <code v-pre>separators</code></span></a></h3>
+<p><code v-pre>separators</code> 定义了一组分割符列表，用于在切分文本时优先选择合适的位置。例如，可以设置为 <code v-pre>[&quot;\n&quot;, &quot;。&quot;, &quot;&quot;]</code>，表示优先按段落分隔符、句号等位置切分。</p>
+<hr>
+<h2 id="工作原理" tabindex="-1"><a class="header-anchor" href="#工作原理"><span>工作原理</span></a></h2>
+<p><code v-pre>RecursiveCharacterTextSplitter</code> 的工作原理如下：</p>
+<ol>
+<li>
+<p><strong>按照分割符顺序递归切分</strong></p>
+<ul>
+<li>根据 <code v-pre>separators</code> 中定义的分割符顺序（如段落、章节分割等），递归地对文本进行切分。</li>
+</ul>
+</li>
+<li>
+<p><strong>初步切分</strong></p>
+<ul>
+<li>使用第一个分割符（如 <code v-pre>&quot;\n&quot;</code>，表示段落分隔）对文本进行初步切分。</li>
+</ul>
+</li>
+<li>
+<p><strong>检查块大小</strong></p>
+<ul>
+<li>如果得到的文本块长度超过了 <code v-pre>chunk_size</code>，则使用下一个分割符（如 <code v-pre>&quot;。&quot;</code>, 表示句子分隔）继续切分。</li>
+</ul>
+</li>
+<li>
+<p><strong>重复递归</strong></p>
+<ul>
+<li>持续递归，直到所有文本块都满足 <code v-pre>chunk_size</code> 的限制。</li>
+</ul>
+</li>
+</ol>
+<p>通过这种递归切分方法，可以有效避免语义割裂，同时确保每个文本块的长度适中。</p>
+<hr>
+<p><img src="/img/user/附件/Pasted image 20250506215237.png" alt="Pasted image 20250506215237.png"></p>
+</div></template>
+
+

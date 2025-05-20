@@ -38,14 +38,58 @@ export default defineThemeConfig({
    */
   profile: {
     avatar: 'https://theme-plume.vuejs.press/plume.png',
-    name: 'My Vuepress Site',
-    description: '',
+    name: 'Rāna(Bass Ver.)',
+    description: '一只区...',
     // circle: true,
     // location: '',
     // organization: '',
   },
 
-  navbar,
+  navbar: [
+    { text: '首页', link: '/', icon: 'material-symbols:home-outline' },
+    { text: '博客', link: '/blog/', icon: 'material-symbols:article-outline' },
+    {
+      text: '学习笔记',
+      icon: 'material-symbols:menu-book',
+      items: [
+        {
+          text: '大语言模型',
+          link: '/大语言模型学习/导航/',
+          icon: 'material-symbols:smart-toy-outline'
+        },
+        {
+          text: '机器学习',
+          link: '/机器学习/导航/',
+          icon: 'material-symbols:psychology-outline'
+        },
+        {
+          text: 'C++ Primer Plus',
+          link: '/c++-primer-plus/导航/',
+          icon: 'material-symbols:code-outline'
+        },
+        {
+          text: 'LeetCode',
+          link: '/leetcode/导航/',
+          icon: 'material-symbols:code-blocks-outline'
+        },
+        {
+          text: '毕业设计',
+          link: '/毕业设计/导航/',
+          icon: 'material-symbols:school-outline'
+        },
+        {
+          text: 'Thino',
+          link: '/thino/导航/',
+          icon: 'material-symbols:terminal-outline'
+        },
+        {
+          text: 'Transformer',
+          link: '/transformer/导航/',
+          icon: 'material-symbols:architecture-outline'
+        }
+      ]
+    }
+  ],
   notes,
 
   /**

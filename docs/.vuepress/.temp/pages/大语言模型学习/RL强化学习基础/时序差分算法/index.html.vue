@@ -1,0 +1,61 @@
+<template><div><hr>
+<p><strong>分类</strong>：强化学习</p>
+<p><strong>标签</strong>：时序差分、蒙特卡洛方法、动态规划、无模型方法</p>
+<p><strong>日期</strong>：2025年4月10日</p>
+<hr>
+<h2 id="核心观点" tabindex="-1"><a class="header-anchor" href="#核心观点"><span>核心观点</span></a></h2>
+<p>时序差分（Temporal Difference, TD）方法是一种用于估计策略价值函数的无模型（model-free）方法。它结合了蒙特卡洛和动态规划的思想，适用于无法得知环境动力学的情况。TD方法通过采样数据来学习策略，更新当前状态的价值估计。</p>
+<h2 id="重点段落" tabindex="-1"><a class="header-anchor" href="#重点段落"><span>重点段落</span></a></h2>
+<ol>
+<li>
+<p><strong>TD与蒙特卡洛和动态规划的结合</strong><br>
+时序差分方法可以从样本数据中学习，不需要事先知道环境。它利用贝尔曼方程的思想，通过后续状态的价值估计来更新当前状态的价值估计。</p>
+</li>
+<li>
+<p><strong>增量更新公式</strong><br>
+TD方法使用即时奖励加上下一步状态价值的折扣和来估计当前状态的期望回报。增量更新公式为：</p>
+<p v-pre class='katex-block'><span class="katex-display"><span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML" display="block"><semantics><mrow><mi>V</mi><mo stretchy="false">(</mo><msub><mi>s</mi><mi>t</mi></msub><mo stretchy="false">)</mo><mo>←</mo><mi>V</mi><mo stretchy="false">(</mo><msub><mi>s</mi><mi>t</mi></msub><mo stretchy="false">)</mo><mo>+</mo><mi>α</mi><mo stretchy="false">[</mo><msub><mi>r</mi><mi>t</mi></msub><mo>+</mo><mi>γ</mi><mi>V</mi><mo stretchy="false">(</mo><msub><mi>s</mi><mrow><mi>t</mi><mo>+</mo><mn>1</mn></mrow></msub><mo stretchy="false">)</mo><mo>−</mo><mi>V</mi><mo stretchy="false">(</mo><mi>s</mi><mo stretchy="false">)</mo><mo stretchy="false">]</mo></mrow><annotation encoding="application/x-tex">V(s_t) \leftarrow V(s_t) + \alpha [r_t + \gamma V(s_{t+1}) - V(s)]
+</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mord mathnormal" style="margin-right:0.22222em;">V</span><span class="mopen">(</span><span class="mord"><span class="mord mathnormal">s</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.2806em;"><span style="top:-2.55em;margin-left:0em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mathnormal mtight">t</span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.15em;"><span></span></span></span></span></span></span><span class="mclose">)</span><span class="mspace" style="margin-right:0.2778em;"></span><span class="mrel">←</span><span class="mspace" style="margin-right:0.2778em;"></span></span><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mord mathnormal" style="margin-right:0.22222em;">V</span><span class="mopen">(</span><span class="mord"><span class="mord mathnormal">s</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.2806em;"><span style="top:-2.55em;margin-left:0em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mathnormal mtight">t</span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.15em;"><span></span></span></span></span></span></span><span class="mclose">)</span><span class="mspace" style="margin-right:0.2222em;"></span><span class="mbin">+</span><span class="mspace" style="margin-right:0.2222em;"></span></span><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mord mathnormal" style="margin-right:0.0037em;">α</span><span class="mopen">[</span><span class="mord"><span class="mord mathnormal" style="margin-right:0.02778em;">r</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.2806em;"><span style="top:-2.55em;margin-left:-0.0278em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mathnormal mtight">t</span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.15em;"><span></span></span></span></span></span></span><span class="mspace" style="margin-right:0.2222em;"></span><span class="mbin">+</span><span class="mspace" style="margin-right:0.2222em;"></span></span><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mord mathnormal" style="margin-right:0.22222em;">γV</span><span class="mopen">(</span><span class="mord"><span class="mord mathnormal">s</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.3011em;"><span style="top:-2.55em;margin-left:0em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight"><span class="mord mathnormal mtight">t</span><span class="mbin mtight">+</span><span class="mord mtight">1</span></span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.2083em;"><span></span></span></span></span></span></span><span class="mclose">)</span><span class="mspace" style="margin-right:0.2222em;"></span><span class="mbin">−</span><span class="mspace" style="margin-right:0.2222em;"></span></span><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mord mathnormal" style="margin-right:0.22222em;">V</span><span class="mopen">(</span><span class="mord mathnormal">s</span><span class="mclose">)]</span></span></span></span></span></p>
+<p>其中，后面这一项被称为时序差分误差，$$\alpha$$为控制更新步长的常数参数。</p>
+</li>
+<li>
+<p><strong>TD与MC方法的比较</strong><br>
+虽然TD方法牺牲了蒙特卡洛方法的无偏估计，但它提供了更直接、方差更低的估计方法。</p>
+</li>
+</ol>
+<h2 id="技术术语转述" tabindex="-1"><a class="header-anchor" href="#技术术语转述"><span>技术术语转述</span></a></h2>
+<ul>
+<li><strong>时序差分误差</strong>：这是在更新价值函数时用于调整估计值的关键部分。</li>
+<li><strong>折扣因子（γ）</strong>：用于权衡当前奖励与未来奖励的重要性。</li>
+</ul>
+<h2 id="常见错误警告" tabindex="-1"><a class="header-anchor" href="#常见错误警告"><span>常见错误警告</span></a></h2>
+<blockquote>
+<p>在使用TD方法时，需注意选择合适的步长参数$$\alpha$$，以避免过度或不足更新。</p>
+</blockquote>
+<h2 id="💡启发点" tabindex="-1"><a class="header-anchor" href="#💡启发点"><span>💡启发点</span></a></h2>
+<p>TD方法为强化学习提供了一种灵活且高效的策略学习途径，尤其适用于复杂环境中。</p>
+<h2 id="行动清单" tabindex="-1"><a class="header-anchor" href="#行动清单"><span>行动清单</span></a></h2>
+<ul>
+<li>探索不同环境下TD方法的应用效果。</li>
+<li>实施TD算法并观察其在不同参数设置下的表现。</li>
+<li>比较TD与其他强化学习算法在具体任务中的效率。</li>
+</ul>
+<h2 id="📈趋势预测" tabindex="-1"><a class="header-anchor" href="#📈趋势预测"><span>📈趋势预测</span></a></h2>
+<p>随着计算能力的提升和数据采集技术的发展，TD方法将会在更多复杂环境中展现其优势，并成为强化学习领域的重要工具。</p>
+<h2 id="后续追踪" tabindex="-1"><a class="header-anchor" href="#后续追踪"><span>后续追踪</span></a></h2>
+<ul>
+<li>研究不同变体的TD算法，如SARSA和Q-learning。</li>
+<li>探讨TD方法在连续状态空间中的应用。</li>
+</ul>
+<h2 id="思考-板块" tabindex="-1"><a class="header-anchor" href="#思考-板块"><span>[思考]板块</span></a></h2>
+<ul>
+<li>如何选择合适的步长参数$$\alpha$$以优化TD算法的性能？</li>
+<li>在什么情况下TD方法优于其他无模型强化学习方法？</li>
+<li>如何结合TD与深度学习技术以增强其在复杂任务中的表现？</li>
+</ul>
+<blockquote>
+<p>来源：原始内容摘自某技术文档</p>
+</blockquote>
+</div></template>
+
+

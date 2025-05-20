@@ -65,7 +65,7 @@ export default defineUserConfig({
     // },
 
     /* 本地搜索, 默认启用 */
-    search: { provider: 'local' },
+    search: false, // 暂时禁用搜索功能
 
     /**
      * Algolia DocSearch

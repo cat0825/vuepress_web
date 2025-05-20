@@ -64,20 +64,16 @@ export default defineUserConfig({
     //   title: true,      // 是否生成标题
     // },
 
-    /* 本地搜索, 默认启用 */
-    search: false, // 暂时禁用搜索功能
-
-    /**
-     * Algolia DocSearch
-     * 启用此搜索需要将 本地搜索 search 设置为 false
-     * @see https://theme-plume.vuejs.press/config/plugins/search/#algolia-docsearch
-     */
-    // search: {
-    //   provider: 'algolia',
-    //   appId: '',
-    //   apiKey: '',
-    //   indexName: '',
-    // },
+    /* 本地搜索 */
+    search: {
+      locales: {
+        '/': {
+          placeholder: '搜索文档',
+        },
+      },
+      maxSuggestions: 10,
+      hotKeys: ['s', '/'],
+    },
 
     /**
      * Shiki 代码高亮

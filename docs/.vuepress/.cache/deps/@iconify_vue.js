@@ -8,7 +8,7 @@ import {
   shallowRef,
   watch
 } from "./chunk-O3I43HSE.js";
-import "./chunk-V6TY7KAL.js";
+import "./chunk-L6OFPWCY.js";
 
 // node_modules/.pnpm/@iconify+vue@5.0.0_vue@3.5.14_typescript@5.8.3_/node_modules/@iconify/vue/dist/iconify.mjs
 var matchIconName = /^[a-z0-9]+(-[a-z0-9]+)*$/;

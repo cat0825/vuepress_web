@@ -1,7 +1,7 @@
 import {
   isLinkHttp,
   useLocale
-} from "./chunk-MK45RGNM.js";
+} from "./chunk-OJVINVNE.js";
 import {
   useToggle
 } from "./chunk-NFJV46VC.js";
@@ -11,7 +11,7 @@ import {
   h,
   toValue
 } from "./chunk-O3I43HSE.js";
-import "./chunk-V6TY7KAL.js";
+import "./chunk-L6OFPWCY.js";
 
 // node_modules/.pnpm/@vuepress+plugin-git@2.0.0-rc.99_typescript@5.8.3_vuepress@2.0.0-rc.22_@vuepress+bundle_4e363164a9e943bf766590d201514dd4/node_modules/@vuepress/plugin-git/lib/client/composables/useChangelog.js
 import { useData } from "vuepress/client";

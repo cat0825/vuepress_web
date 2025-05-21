@@ -28,10 +28,10 @@ export default defineThemeConfig({
   // createTime: true, // 是否显示文章创建时间
 
   /* 站点页脚 */
-  // footer: {
-  //   message: 'Power by <a target="_blank" href="https://v2.vuepress.vuejs.org/">VuePress</a> & <a target="_blank" href="https://theme-plume.vuejs.press">vuepress-theme-plume</a>',
-  //   copyright: '',
-  // },
+  footer: {
+    message: '离开世界之前 一切都是过程',
+    copyright: '',
+  },
 
   /**
    * @see https://theme-plume.vuejs.press/config/basic/#profile
@@ -40,8 +40,8 @@ export default defineThemeConfig({
     avatar: 'https://theme-plume.vuejs.press/plume.png',
     name: 'Rāna(Bass Ver.)',
     description: '一只区...',
-    // circle: true,
-    // location: '',
+     circle: true,
+     location: ' Beijing',
     // organization: '',
   },
 
@@ -62,31 +62,31 @@ export default defineThemeConfig({
           link: '/机器学习/导航/',
           icon: 'material-symbols:psychology-outline'
         },
-        {
-          text: 'C++ Primer Plus',
-          link: '/c++-primer-plus/导航/',
-          icon: 'material-symbols:code-outline'
-        },
+        // {
+        //   text: 'C++ Primer Plus',
+        //   link: '/c++-primer-plus/导航/',
+        //   icon: 'material-symbols:code-outline'
+        // },
         {
           text: 'LeetCode',
           link: '/leetcode/导航/',
           icon: 'material-symbols:code-blocks-outline'
         },
-        {
-          text: '毕业设计',
-          link: '/毕业设计/导航/',
-          icon: 'material-symbols:school-outline'
-        },
-        {
-          text: 'Thino',
-          link: '/thino/导航/',
-          icon: 'material-symbols:terminal-outline'
-        },
-        {
-          text: 'Transformer',
-          link: '/transformer/导航/',
-          icon: 'material-symbols:architecture-outline'
-        }
+        // {
+        //   text: '毕业设计',
+        //   link: '/毕业设计/导航/',
+        //   icon: 'material-symbols:school-outline'
+        // },
+        // {
+        //   text: 'Thino',
+        //   link: '/thino/导航/',
+        //   icon: 'material-symbols:terminal-outline'
+        // },
+        // {
+        //   text: 'Transformer',
+        //   link: '/transformer/导航/',
+        //   icon: 'material-symbols:architecture-outline'
+        // }
       ]
     }
   ],
